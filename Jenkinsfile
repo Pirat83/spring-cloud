@@ -1,5 +1,4 @@
 node('docker') {
-    env.PROJECT_NAME = getProjectName("${env.JOB_NAME})")
     sh 'env'
     stage 'Checkout'
     // Get some code from a GitHub repository
