@@ -16,4 +16,5 @@ node('docker') {
     //step([$class: 'JavadocArchiver', javadocDir: '/target/site/apidocs', keepAll: false])
     step([$class: 'FindBugsPublisher'])
     step([$class: 'CheckStylePublisher'])
+    step([$class: 'TasksPublisher', pattern: '**/*.*', ignoreCase: true, asRegexp: false, high: 'FIXME', normal: 'TODO', low: '@Deprecated'])
 }
