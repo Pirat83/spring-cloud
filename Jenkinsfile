@@ -19,5 +19,6 @@ node('docker') {
     step([$class: 'DryPublisher', pattern: '**/*.*'])
     step([$class: 'PmdPublisher', pattern: '**/*.*'])
     step([$class: 'TasksPublisher', pattern: '**/*.*', ignoreCase: true, asRegexp: false, high: 'FIXME', normal: 'TODO', low: '@Deprecated'])
+    step([$class: 'WarningsPublisher', consoleParsers: [[parserName: 'Maven'], [parserName: 'Java Compiler (javac)'], [parserName: 'JavaDoc Tool']]])
     step([$class: 'AnalysisPublisher'])
 }
