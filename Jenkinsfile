@@ -15,7 +15,7 @@ node('docker') {
     step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar, **/target/*.war, **/target/*.ear', fingerprint: true])
     //step([$class: 'JavadocArchiver', javadocDir: '/target/site/apidocs', keepAll: false])
     step([$class: 'FindBugsPublisher', pattern: '**/*.*', isRankActivated: true])
-    step([$class: 'CheckStylePublisher'])
+    step([$class: 'CheckStylePublisher', pattern: '**/*.*'])
     step([$class: 'DryPublisher', pattern: '**/*.*'])
     step([$class: 'PmdPublisher', pattern: '**/*.*'])
     step([$class: 'TasksPublisher', pattern: '**/*.*', ignoreCase: true, asRegexp: false, high: 'FIXME', normal: 'TODO', low: '@Deprecated'])
