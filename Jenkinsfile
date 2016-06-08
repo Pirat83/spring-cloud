@@ -17,6 +17,7 @@ node('docker') {
     step([$class: 'FindBugsPublisher'])
     step([$class: 'CheckStylePublisher'])
     step([$class: 'DryPublisher', pattern: '**/*.*'])
+    step([$class: 'PmdPublisher', pattern: '**/*.*'])
     step([$class: 'TasksPublisher', pattern: '**/*.*', ignoreCase: true, asRegexp: false, high: 'FIXME', normal: 'TODO', low: '@Deprecated'])
     step([$class: 'AnalysisPublisher'])
 }
