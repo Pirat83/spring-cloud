@@ -6,7 +6,7 @@ node('docker') {
 
     stage 'Build'
     def mvnHome = tool 'Maven 3.3.9'
-    sh "${mvnHome}/bin/mvn -B install sonar:sonar -Dsonar.branch=${env.JOB_NAME}"
+    sh "${mvnHome}/bin/mvn -B install sonar:sonar -Dsonar.branch=${env.BRANCH_NAME}"
 
     stage 'Test'
     step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml', allowEmptyResults: true])
