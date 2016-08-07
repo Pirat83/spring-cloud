@@ -194,7 +194,8 @@
                 <artifactId>maven-changes-plugin</artifactId>
                 <version>2.12</version>
                 <configuration>
-                    <onlyCurrentVersion>true</onlyCurrentVersion>
+                    <!-- TODO RKA fix changelog generation after implementing JIRA / GitHub integration -->
+                    <!--<onlyCurrentVersion>true</onlyCurrentVersion>-->
                 </configuration>
                 <reportSets>
                     <reportSet>
