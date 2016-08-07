@@ -7,7 +7,7 @@ node('docker') {
     stage 'Build'
     def mvnHome = tool 'Maven 3.3.9'
     sh "${mvnHome}/bin/mvn -B install site sonar:sonar -Dsonar.branch=${env.BRANCH_NAME}"
-    publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'target/site/', reportFiles: 'index.html', reportName: 'Maven Site Report'])
+    publishHTML(target: [allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'target/site/', reportFiles: 'index.html', reportName: 'Maven Site Report'])
 
     stage 'Test'
     step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml', allowEmptyResults: true])
