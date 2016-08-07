@@ -13,6 +13,27 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <organization>
+        <name>Blue-Sharp</name>
+        <url>https://www.blue-sharp.de</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <id>1</id>
+            <name>Rafael Kansy</name>
+            <roles>
+                <role>Architect</role>
+                <role>Developer</role>
+                <role>SCM engineer</role>
+                <role>Product owner</role>
+            </roles>
+            <email>rafael.kansy@blue-sharp.de</email>
+            <organization>Blue-Sharp</organization>
+            <organizationUrl>https://www.blue-sharp.de</organizationUrl>
+        </developer>
+    </developers>
+
     <issueManagement>
         <system>GitHub</system>
         <url>https://github.com/Pirat83/spring-cloud/issues/</url>
