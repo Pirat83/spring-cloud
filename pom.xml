@@ -39,6 +39,11 @@
         <url>https://github.com/Pirat83/spring-cloud/issues/</url>
     </issueManagement>
 
+    <ciManagement>
+        <system>Jenkins</system>
+        <url>${jenkins.host.url}/job/Blue-Sharp/job/spring-cloud/</url>
+    </ciManagement>
+
     <properties>
         <java.version>1.8</java.version>
     </properties>
