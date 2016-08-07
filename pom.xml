@@ -39,6 +39,12 @@
         <url>https://github.com/Pirat83/spring-cloud/issues/</url>
     </issueManagement>
 
+    <scm>
+        <url>https://github.com/Pirat83/spring-cloud/</url>
+        <connection>scm:git:https://github.com/Pirat83/spring-cloud.git</connection>
+        <developerConnection>scm:git:git@github.com:Pirat83/spring-cloud.git</developerConnection>
+    </scm>
+
     <ciManagement>
         <system>Jenkins</system>
         <url>${jenkins.host.url}/job/Blue-Sharp/job/spring-cloud/</url>
