@@ -5,7 +5,7 @@
 * Set JAVA_HOME and PATH environment variables.
 * See [Oracle JDK 8 installation overview](https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html)
 ### Set up GIT client
-* See [Github.com documentation] (https://help.github.com/articles/set-up-git/)
+* See [Github.com documentation](https://help.github.com/articles/set-up-git/)
 * Set up proxy server (if required)
 Command to use :
 ```bash
@@ -31,7 +31,7 @@ git config --global --get https.proxy
 ```
 
 ### Set up Apache Maven
-* See [Apache Maven documentation] (https://maven.apache.org/install.html)
+* See [Apache Maven documentation](https://maven.apache.org/install.html)
 * Set M2_HOME, M2 and PATH variables.
 * Set up proxy server (if required) 
 Put into your ${user.home}/.m2/settings.xml the correct configuration
@@ -57,10 +57,10 @@ Put into your ${user.home}/.m2/settings.xml the correct configuration
 * change 8080 to the proxy port configured on your proxy server
 
 ### Set up MongoDB 
-* See [MongoDB documentation] (https://docs.mongodb.org/manual/installation/)
+* See [MongoDB documentation](https://docs.mongodb.org/manual/installation/)
 
 ### Set up MySQL 
-* See [MySQL documentation] (http://dev.mysql.com/doc/refman/5.7/en/installing.html)
+* See [MySQL documentation](http://dev.mysql.com/doc/refman/5.7/en/installing.html)
 * Create database schemas
 ** appointment
 ** master-data
@@ -70,13 +70,13 @@ Put into your ${user.home}/.m2/settings.xml the correct configuration
 * Authenticate the spring-cloud user to access the database schemas
 
 ### Set up your favorite IDE
-* [IntelliJ IDEA] (https://www.jetbrains.com/idea/)
-* [NetBeans IDE] (https://netbeans.org/)
-* [Eclipse IDE for Java EE Developers] (https://eclipse.org/)
-* [Spring Eclipse IDE] (https://spring.io/tools/eclipse)
+* [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+* [NetBeans IDE](https://netbeans.org/)
+* [Eclipse IDE for Java EE Developers](https://eclipse.org/)
+* [Spring Eclipse IDE](https://spring.io/tools/eclipse)
 * Set up proxy server in your IDE (if required)
 #### Install lombok plugin
-* See [Lombok documentation] (https://projectlombok.org/download.html)
+* See [Lombok documentation](https://projectlombok.org/download.html)
 * NetBeans: Just put lombok.jar on the classpath and enable annotation processing. More…
 * Eclipse and variants: Run lombok.jar as a java app (i.e. doubleclick it, usually) to install. Also add lombok.jar to your project. Supported variants: Springsource Tool Suite, JBoss Developer Studio. Update Maven Projects. 
 * IDEA IntelliJ	A plugin developed by Michael Plushnikov adds support for most features.
@@ -103,28 +103,28 @@ to verify if your eureka-server has started correctly on port 8761 open with you
 ```bash
 java -jar data-collection-service/target/data-collection-service-0.0.1-SNAPSHOT.jar --server.port=8000
 ```
-verify [The data-collection-service endpoint:] (http://localhost:8000/)
+verify [The data-collection-service endpoint:](http://localhost:8000/)
 ### Start maintenance-service
 ```bash
 java -jar maintenance-service/target/maintenance-service-0.0.1-SNAPSHOT.jar --server.port=8010
 ```
-verify [The maintenance-service endpoint:] (http://localhost:8010/) 
+verify [The maintenance-service endpoint:](http://localhost:8010/) 
 ### Start car-repair-service
 ```bash
 java -jar car-repair-service/target/car-repair-service-0.0.1-SNAPSHOT.jar --server.port=8020
 ```
-verify [The car-repair-service endpoint:] (http://localhost:8020/) 
+verify [The car-repair-service endpoint:](http://localhost:8020/) 
 
 ### Start master-data-service
 ```bash
 java -jar master-data-service/target/master-data-service-0.0.1-SNAPSHOT.jar --server.port=8030
 ```
-verify [The master-data-service endpoint:] (http://localhost:8030/)     
+verify [The master-data-service endpoint:](http://localhost:8030/)     
 ### Start appointment-service
 ```bash
 java -jar appointment-service/target/appointment-service-0.0.1-SNAPSHOT.jar --server.port=8040
 ```
-verify [The appointment-service endpoint:] (http://localhost:8040)     
+verify [The appointment-service endpoint:](http://localhost:8040)     
 ### Putting everything together
 Now you got everything running. Verify that all 5 running spring-cloud are running. [Eureka application inventory](http://localhost:8761/eureka/apps/) 
 ### Start Zuul-Proxy
@@ -134,7 +134,7 @@ java -jar zuul-proxy/target/zuul-proxy-0.0.1-SNAPSHOT.jar
 to verify if your zuul-proxy has started correctly on port 8080 access one service via the API endpoint [http://localhost:8080/api/sensor](http://localhost:8080/api/sensor). 
 ### Putting everything together
 Now you got everything running. Verify that all 5 services are running. [Eureka application inventory](http://localhost:8761/eureka/apps/) 
-Let's generate some dummy data [The SensorEvent dummy data endpoint](http://localhost:8000/dummy-data). You should see some JSON objects. And that's all :-)
+Let's generate some dummy data [The SensorEvent dummy data endpoint] (http://localhost:8000/dummy-data). You should see some JSON objects. And that's all :-)
 ### Hystrix Dashboard
 For now Hystrix streams are not aggregated by turbine aggregator. 
 
@@ -187,11 +187,11 @@ Every external request should be routed through the Zuul proxy.
 
 ## Useful links: 
 * [How to set up environment variables in Linux, Unix, Mac and Windows environments](http://www.tutorialspoint.com/maven/maven_environment_setup.htm)
-* [How to set up a Maven HTTP / HTTPS proxy] (https://maven.apache.org/guides/mini/guide-proxies.html) 
-* [Spring engineering blog about micro services] (https://spring.io/blog/2015/07/14/microservices-with-spring)
-* [Overview of cloud native applications with spring-cloud] (http://projects.spring.io/spring-cloud/spring-cloud.html)
+* [How to set up a Maven HTTP / HTTPS proxy](https://maven.apache.org/guides/mini/guide-proxies.html) 
+* [Spring engineering blog about micro services](https://spring.io/blog/2015/07/14/microservices-with-spring)
+* [Overview of cloud native applications with spring-cloud](http://projects.spring.io/spring-cloud/spring-cloud.html)
 * [Very interesting overview of spring-cloud components by Kenny Bastani](http://www.kennybastani.com/2015/07/spring-cloud-docker-microservices.html)
-* [Simple overview of spring-cloud components] (http://de.slideshare.net/mstine/dist-sys-wspringclouddeckset)
+* [Simple overview of spring-cloud components](http://de.slideshare.net/mstine/dist-sys-wspringclouddeckset)
 * [Overview of spring-cloud-netflix components](http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html)
 * [Magnus Larson's Blog Series - building micro services](http://callistaenterprise.se/blogg/teknik/2015/05/20/blog-series-building-microservices/)
 * [Configuration of Hystrix](https://github.com/Netflix/Hystrix/wiki/Configuration)
