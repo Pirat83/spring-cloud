@@ -139,8 +139,9 @@ Let's generate some dummy data [The SensorEvent dummy data endpoint] (http://loc
 For now Hystrix streams are not aggregated by turbine aggregator. 
 
 ###Important endpoint URLs: 
+
 | Endpoint / Service      | URL                                                                          | Port range |
-|-------------------------|------------------------------------------------------------------------------|------------|
+| ----------------------- | ---------------------------------------------------------------------------- | ---------- |
 | Eureka Dashboard        | http://localhost:8761/                                                       | 8761-8761  |
 | Hystrix Dashboard       | http://localhost:9000/                                                       | 9000-9000  |
 | data-collection-service | http://localhost:8000/sensorValues                                           | 8000-8009  | 
@@ -176,8 +177,9 @@ Using Spring profiles is not advisable. In this case you would hard code the por
 And putting hard coded configuration in the built artifact is really, really bad practice - not even in cloud-native environments.  
 
 ###Important Zuul proxy URLs: 
+
 | Endpoint / Service      | URL                                                                          | Port       |
-|-------------------------|------------------------------------------------------------------------------|------------|
+| ----------------------- | ---------------------------------------------------------------------------- | ---------- |
 | data-collection-service | http://localhost:8080/api/sensor                                             | 8080       | 
 | maintenance-service     | http://localhost:8080/api/maintenance                                        | 8080       | 
 | car-repair-service      | http://localhost:8080/api/car                                                | 8080       |
