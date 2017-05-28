@@ -1,0 +1,127 @@
+version: '3'
+services:
+  eureka-server:
+    build: ./eureka-server
+    networks:
+      - spring-cloud
+    ports:
+      - "8761:8761"
+
+  zuul-proxy:
+    build: ./zuul-proxy
+    ports:
+      - "8080:8080"
+    networks:
+      - spring-cloud
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+
+  appointment-service:
+    build: ./appointment-service
+    networks:
+      - spring-cloud
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+  appointment-service-jpa-db:
+    image: blacklabelops/postgres
+    networks:
+      - spring-cloud
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=appointment-service
+      - POSTGRES_ENCODING=UNICODE
+      - POSTGRES_COLLATE=C
+      - POSTGRES_COLLATE_TYPE=C
+    volumes:
+      - appointment-service-jpa-db-data:/var/lib/postgresql/data
+
+  car-repair-service:
+    build: ./car-repair-service
+    networks:
+      - spring-cloud
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+  car-repair-service-jpa-db:
+    image: blacklabelops/postgres
+    networks:
+      - spring-cloud
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=car-repair-service
+      - POSTGRES_ENCODING=UNICODE
+      - POSTGRES_COLLATE=C
+      - POSTGRES_COLLATE_TYPE=C
+    volumes:
+      - car-repair-service-jpa-db-data:/var/lib/postgresql/data
+  car-repair-service-mongo-db:
+    image: library/mongo
+    networks:
+      - spring-cloud
+    volumes:
+      - car-repair-service-mongo-db-data:/data/db
+
+  data-collection-service:
+    build: ./data-collection-service
+    networks:
+      - spring-cloud
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+  data-collection-service-mongo-db:
+    image: library/mongo
+    networks:
+       - spring-cloud
+    volumes:
+      - data-collection-service-mongo-db-data:/data/db
+
+  maintenance-service:
+    build: ./maintenance-service
+    networks:
+      - spring-cloud
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+  maintenance-service-mongo-db:
+    image: library/mongo
+    networks:
+      - spring-cloud
+    volumes:
+      - maintenance-service-mongo-db-data:/data/db
+
+  master-data-service:
+    build: ./master-data-service
+    networks:
+      - spring-cloud
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+  master-data-service-jpa-db:
+    image: blacklabelops/postgres
+    networks:
+      - spring-cloud
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=master-data-service
+      - POSTGRES_ENCODING=UNICODE
+      - POSTGRES_COLLATE=C
+      - POSTGRES_COLLATE_TYPE=C
+    volumes:
+      - master-data-service-jpa-db-data:/var/lib/postgresql/data
+
+volumes:
+  appointment-service-jpa-db-data:
+    external: false
+  car-repair-service-jpa-db-data:
+    external: false
+  car-repair-service-mongo-db-data:
+    external: false
+  data-collection-service-mongo-db-data:
+    external: false
+  maintenance-service-mongo-db-data:
+    external: false
+  master-data-service-jpa-db-data:
+    external: false
+
+networks:
+  spring-cloud:
+    driver: bridge
